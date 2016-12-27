@@ -1,4 +1,7 @@
 config = require('./services/config');
+var es = require('elasticsearch');
+var esClient = new es.Client({host: config.elastic_host, log:'info'});
+var db = new (require('./services/storage'))(esClient);
 
 /* Routers */
 

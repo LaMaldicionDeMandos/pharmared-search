@@ -45,3 +45,5 @@ class DB {
     return client.create({index: 'pharmared-search', type: 'EntitySearch', id: entity.id, body: entity});
   }
 };
+
+module.exports = DB;
