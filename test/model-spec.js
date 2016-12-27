@@ -6,11 +6,12 @@ const EntitySearch = require('../model/model'),
 describe('Model', () => {
   describe('EntitySearch', () => {
     describe('constructor', () => {
-      var entity = new EntitySearch('aa', 'bb', 'cc');
+      var entity = new EntitySearch('aa', 'bb', 'cc', EntitySearch.EntityType.PHARMACY);
       it('should create entity with id', () => entity.should.have.property('id', 'aa'));
       it('should create entity with fullName', () => entity.should.have.property('fullName', 'bb'));
       it('should create entity with fullAddress', () => entity.should.have.property('fullAddress', 'cc'));
       it('should create entity with fullSearch', () => entity.should.have.property('fullSearch', 'bb cc'));
+      it('should create entity with fullSearch', () => entity.should.have.property('entityType', 'PHARMACY'));
     });
   });
 });
