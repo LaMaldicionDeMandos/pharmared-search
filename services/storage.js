@@ -1,8 +1,7 @@
 /**
  * Created by boot on 12/21/16.
  */
-const EntitySearch = require('../model/model'),
-  BlueBied = require('bluebird');
+const EntitySearch = require('../model/model');
 
 var client;
 class DB {
@@ -40,5 +39,9 @@ class DB {
       }
     };
     client.indices.create(this.Schema);
+  }
+
+  addEntity(entity) {
+    return client.create({index: 'pharmared-search', type: 'EntitySearch', id: entity.id, body: entity});
   }
 };
